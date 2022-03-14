@@ -393,6 +393,12 @@ begin
         if i >= 0 then
           sl.Delete(i);
     end;
+	
+	if FRpc.RPCVersion > 15 then begin
+		i:=sl.IndexOf('status');
+		if i > 0 then 
+			sl.Delete(i);
+	end;
 
     i:=sl.IndexOf('downloadDir');
     if FRpc.RequestFullInfo then begin
