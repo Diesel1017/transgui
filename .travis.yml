@@ -61,7 +61,7 @@ matrix:
       env:
         - task=shfmt
       script:
-        - docker run -it --rm -v "$(pwd)":/sh -w /sh peterdavehello/shfmt:2.6.4 shfmt -sr -i 2 -l -w -ci .
+        - docker run -it --rm -v "$(pwd)":/sh -w /sh peterdavehello/shfmt:3.4.0 shfmt -sr -i 2 -l -w -ci .
         - git diff --color
         - git diff --stat=220 --color --exit-code
 
@@ -146,7 +146,7 @@ matrix:
       deploy: *deploy
 
     - os: osx
-      osx_image: xcode11.1
+      osx_image: xcode11.3
       stage: build
       env:
         - arch=osx
